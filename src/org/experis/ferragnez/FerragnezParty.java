@@ -19,11 +19,29 @@ public class FerragnezParty {
         // Methods to check if nameToCheck is included in the invitedGuests array
 
         // Method 1 -> asList method
-        List<String> namesList = Arrays.asList(invitedGuests);
-        namesList.replaceAll(String::toUpperCase);
+//        List<String> namesList = Arrays.asList(invitedGuests);
+//        namesList.replaceAll(String::toUpperCase);
+//
+//        if(namesList.contains(nameToCheck)) {
+//            System.out.println("This way please!");
+//        } else {
+//            System.out.println("My apologies, your name is not on the list. I can't let you in.");
+//        }
 
-        if(namesList.contains(nameToCheck)) {
-            System.out.println("This way please!");
+
+        // Method 2 -> for loop with flags
+
+        boolean flag = false;
+
+        for (int i = 0; i < invitedGuests.length ; i++) {
+            invitedGuests[i] = invitedGuests[i].toUpperCase();
+            if (nameToCheck.equals(invitedGuests[i])) {
+                flag = true;
+            }
+        }
+
+        if (flag) {
+            System.out.println("This Way Please!");
         } else {
             System.out.println("My apologies, your name is not on the list. I can't let you in.");
         }
