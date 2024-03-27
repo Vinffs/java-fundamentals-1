@@ -23,10 +23,11 @@ public class TrainTicket {
         } else if (age > 65) {
             double finalPrice = (km * pricePerKm) -  (km * costKmSenior);
             System.out.println("The price of your ticket is: € " + String.format("%.2f", finalPrice));
+
         } else {
             double finalPrice = km * pricePerKm;
             System.out.println("The price of your ticket is: € " + String.format("%.2f", finalPrice));
         }
-
+        scan.close();
     }
 }
