@@ -16,17 +16,19 @@ public class TrainTicket {
         double costKmMinor = pricePerKm * 0.20;
         double costKmSenior = pricePerKm * 0.40;
 
+        double average = km * pricePerKm;
+        String resultText = "The price of your ticket is: € ";
+
         if(age < 18) {
-            double finalPrice = (km * pricePerKm) -  (km * costKmMinor);
-            System.out.println("The price of your ticket is: € " + String.format("%.2f", finalPrice));
+            double finalPrice = average - (km * costKmMinor);
+            System.out.println(resultText + String.format("%.2f", finalPrice));
 
         } else if (age > 65) {
-            double finalPrice = (km * pricePerKm) -  (km * costKmSenior);
-            System.out.println("The price of your ticket is: € " + String.format("%.2f", finalPrice));
+            double finalPrice = average - (km * costKmSenior);
+            System.out.println(resultText + String.format("%.2f", finalPrice));
 
         } else {
-            double finalPrice = km * pricePerKm;
-            System.out.println("The price of your ticket is: € " + String.format("%.2f", finalPrice));
+            System.out.println(resultText + String.format("%.2f", average));
         }
         scan.close();
     }
