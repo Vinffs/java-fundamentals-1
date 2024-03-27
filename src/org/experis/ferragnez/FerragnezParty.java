@@ -14,12 +14,13 @@ public class FerragnezParty {
 
         System.out.print("Good Evening! May I have your name? ");
 
-        String nameToCheck = scan.nextLine();
+        String nameToCheck = scan.nextLine().toUpperCase();
 
         // Methods to check if nameToCheck is included in the invitedGuests array
 
         // Method 1 -> asList method
         List<String> namesList = Arrays.asList(invitedGuests);
+        namesList.replaceAll(String::toUpperCase);
 
         if(namesList.contains(nameToCheck)) {
             System.out.println("This way please!");
@@ -27,5 +28,6 @@ public class FerragnezParty {
             System.out.println("My apologies, your name is not on the list. I can't let you in.");
         }
 
+        scan.close();
     }
 }
